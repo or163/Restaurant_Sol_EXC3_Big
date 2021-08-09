@@ -22,8 +22,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			CheckController ctrl = new CheckController();
-			ctrl.initData();
 			Parent p = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
 			Scene scene = new Scene(p, 700, 500);
 			primaryStage.setScene(scene);

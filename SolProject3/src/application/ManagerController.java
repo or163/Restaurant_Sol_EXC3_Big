@@ -28,14 +28,9 @@ public class ManagerController {
 	@FXML
 	BorderPane pannelRoot;
 
-	@FXML MenuButton menu;
-	
-	@FXML CheckMenuItem ch;
 	
 	@FXML
 	void goHome(ActionEvent event) throws IOException {
-		for(Dish d : Main.restaurant.getDishes().values())
-			menu.getItems().add(new CheckMenuItem(d.getDishName()));
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Manager.fxml"));
 		Parent p = fx.load();
 		Scene s = new Scene(p, 700, 500);
