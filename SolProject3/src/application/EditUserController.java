@@ -78,11 +78,11 @@ public class EditUserController {
 		date.setValue(cust.getBirthDay());
 		gender.setValue(cust.getGender());
 		neighborhood.setValue(cust.getNeighberhood());
-		if (cust.isSensitiveToLactose())
+		if (cust.getIsSensitiveToLactose())
 			lactoseTG.selectToggle(lactoseYes);
 		else
 			lactoseTG.selectToggle(lactoseNo);
-		if (cust.isSensitiveToGluten())
+		if (cust.getIsSensitiveToGluten())
 			glutenTG.selectToggle(glutenYes);
 		else
 			glutenTG.selectToggle(glutenNo);

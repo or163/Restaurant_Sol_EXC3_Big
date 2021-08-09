@@ -107,7 +107,7 @@ public class LoginController {
 		}
 	}
 
-	public Customer getCustomer() {
+	public static Customer getCustomer() {
 		return customer;
 	}
 

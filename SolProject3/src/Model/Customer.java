@@ -45,7 +45,7 @@ public class Customer extends Person {
 		this.neighberhood = neighberhood;
 	}
 
-	public boolean isSensitiveToLactose() {
+	public boolean getIsSensitiveToLactose() {
 		return isSensitiveToLactose;
 	}
 
@@ -53,7 +53,7 @@ public class Customer extends Person {
 		this.isSensitiveToLactose = isSensitiveToLactose;
 	}
 
-	public boolean isSensitiveToGluten() {
+	public boolean getIsSensitiveToGluten() {
 		return isSensitiveToGluten;
 	}
 

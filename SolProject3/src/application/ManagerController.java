@@ -154,6 +154,16 @@ public class ManagerController {
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
+	
+	@FXML
+	void goGRLDList(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GRLDishListManager.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GRLDishListManagerController ctrl = (GRLDishListManagerController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
 
 	@FXML
 	void goOut(ActionEvent event) throws IOException {
