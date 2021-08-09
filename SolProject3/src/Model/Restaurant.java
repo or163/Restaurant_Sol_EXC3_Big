@@ -294,11 +294,11 @@ public class Restaurant implements Serializable {
 				if (!getDishes().containsKey(d.getId()))
 					return false;
 				for (Component c : d.getComponenets()) {
-					if (order.getCustomer().isSensitiveToGluten() && c.isHasGluten()) {
+					if (order.getCustomer().getIsSensitiveToGluten() && c.isHasGluten()) {
 						throw new SensitiveException(
 								order.getCustomer().getFirstName() + " " + order.getCustomer().getLastName(),
 								d.getDishName());
-					} else if (order.getCustomer().isSensitiveToLactose() && c.isHasLactose()) {
+					} else if (order.getCustomer().getIsSensitiveToLactose() && c.isHasLactose()) {
 						throw new SensitiveException(
 								order.getCustomer().getFirstName() + " " + order.getCustomer().getLastName(),
 								d.getDishName());
@@ -541,17 +541,17 @@ public class Restaurant implements Serializable {
 	/* QUEREIES */
 	public Collection<Dish> getReleventDishList(Customer c) {
 		ArrayList<Dish> dishList = new ArrayList<>();
-		if (!c.isSensitiveToGluten() && !c.isSensitiveToLactose())
+		if (!c.getIsSensitiveToGluten() && !c.getIsSensitiveToLactose())
 			return getDishes().values();
 		for (Dish d : getDishes().values()) {
 			boolean isValid = true;
 			for (Component comp : d.getComponenets()) {
-				if (c.isSensitiveToGluten() && c.isSensitiveToLactose()) {
+				if (c.getIsSensitiveToGluten() && c.getIsSensitiveToLactose()) {
 					if (comp.isHasGluten() || comp.isHasLactose())
 						isValid = false;
-				} else if (c.isSensitiveToGluten() && comp.isHasGluten()) {
+				} else if (c.getIsSensitiveToGluten() && comp.isHasGluten()) {
 					isValid = false;
-				} else if (c.isSensitiveToLactose() && comp.isHasLactose()) {
+				} else if (c.getIsSensitiveToLactose() && comp.isHasLactose()) {
 					isValid = false;
 				}
 			}
@@ -701,7 +701,7 @@ public class Restaurant implements Serializable {
 			}
 		} else {
 			for (Order o : orders) {
-				if (o.getCustomer().isSensitiveToGluten() || o.getCustomer().isSensitiveToLactose()) {
+				if (o.getCustomer().getIsSensitiveToGluten() || o.getCustomer().getIsSensitiveToLactose()) {
 					ExpressDelivery ed = new ExpressDelivery(dp, da, false, o, LocalDate.of(2021, 1, 1));
 					AIDecision.add(ed);
 				} else

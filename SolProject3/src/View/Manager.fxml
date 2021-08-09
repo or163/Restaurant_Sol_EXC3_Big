@@ -30,7 +30,7 @@
             </MenuButton>
             <MenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="61.0" prefWidth="99.0" style="-fx-background-color: #340323; -fx-background-radius: 0;" text="MenuButton" textFill="WHITE">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" onAction="#goGRLDList" text="get relevant dish list" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
                <effect>

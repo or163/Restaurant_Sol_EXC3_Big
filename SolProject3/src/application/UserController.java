@@ -38,6 +38,16 @@ public class UserController {
 	}
 	
 	@FXML
+	void goGRLDList(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GRLDishListUser.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GRLDishListUserController ctrl = (GRLDishListUserController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
     private void SaveToSerelizebaleFile(ActionEvent event) {
     	try {
 			SerializableWiz.save(Main.restaurant);
