@@ -6,6 +6,7 @@ import Model.Dish;
 import Remove.RemoveComponentController;
 import Remove.RemoveCookController;
 import Remove.RemoveCustomerController;
+import Remove.RemoveDAController;
 import Remove.RemoveDPController;
 import Remove.RemoveDishController;
 import Remove.RemoveOrderController;
@@ -96,6 +97,26 @@ public class ManagerController {
 	}
 	
 	@FXML
+	void goAddDA(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/AddDA.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		AddDAController ctrl = (AddDAController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goAddDelivery(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/AddDelivery.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		AddDeliveryController ctrl = (AddDeliveryController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
 	void goRemoveCook(ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveCook.fxml"));
 		Pane p = fx.load();
@@ -175,6 +196,17 @@ public class ManagerController {
 		pannelRoot.setCenter(pp);
 	}
 
+	
+	@FXML
+    void goRemoveDA(ActionEvent event) throws IOException{
+	 FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDA.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		RemoveDAController ctrl = (RemoveDAController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+    }
+
 	@FXML
 	void goOut(ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
@@ -184,7 +216,7 @@ public class ManagerController {
 		// ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
-
+	
 	@FXML
 	void SaveToSerelizebaleFile(ActionEvent event) {
 		try {
