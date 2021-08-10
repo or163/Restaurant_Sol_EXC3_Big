@@ -8,6 +8,8 @@ import Utils.SerializableWiz;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
@@ -26,6 +28,14 @@ public class UserController {
 	public void initData(Customer c) {
 		welcome.setText("Welcome " + c.getFirstName());
 	}
+	
+	@FXML
+    void GoLogin(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
+		Parent p = fx.load();
+		Scene s = new Scene(p, 700, 500);
+		Main.stage.setScene(s);
+    }
 	
 	@FXML
 	void goGetCooksByExpertise (ActionEvent event) throws IOException {

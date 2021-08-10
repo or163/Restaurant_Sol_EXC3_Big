@@ -8,6 +8,7 @@ import java.util.TimeZone;
 
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 
 public class Utils {
 
@@ -37,5 +38,40 @@ public class Utils {
             }
         }
         return false;
+    }
+	
+    public static boolean isValidPassword(String password, Label message)
+    {
+            boolean isValid = true;
+            if (password.length() > 15 || password.length() < 6)
+            {
+                    message.setText("Password must be less than 15 and more than 6 characters in length.");
+                    isValid = false;
+            }
+            String upperCaseChars = "(.*[A-Z].*)";
+            if (!password.matches(upperCaseChars ))
+            {
+            		message.setText("Password must have atleast one uppercase character");
+                    isValid = false;
+            }
+            String lowerCaseChars = "(.*[a-z].*)";
+            if (!password.matches(lowerCaseChars ))
+            {
+            		message.setText("Password must have atleast one lowercase character");
+                    isValid = false;
+            }
+            String numbers = "(.*[0-9].*)";
+            if (!password.matches(numbers ))
+            {
+            		message.setText("Password must have atleast one number");
+                    isValid = false;
+            }
+            String specialChars = "(.*[@,#,$,%].*$)";
+            if (!password.matches(specialChars ))
+            {
+            		message.setText("Password must have atleast one special character among @#$%");
+                    isValid = false;
+            }
+            return isValid; 
     }
 }

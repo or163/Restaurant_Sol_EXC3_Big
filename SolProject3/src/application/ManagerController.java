@@ -38,6 +38,14 @@ public class ManagerController {
 		Scene s = new Scene(p, 700, 500);
 		Main.stage.setScene(s);
 	}
+	
+	@FXML
+    void GoLogin(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
+		Parent p = fx.load();
+		Scene s = new Scene(p, 700, 500);
+		Main.stage.setScene(s);
+    }
 
 	@FXML
 	void goAddCook(ActionEvent event) throws IOException {
@@ -213,6 +221,86 @@ public class ManagerController {
 		AnchorPane pp = (AnchorPane) p;
 		GetPopularComponentsController ctrl = (GetPopularComponentsController) fx.getController();
 		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goOrderWaitingTime (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/OrderWaitingTime.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		OrderWaitingTimeController ctrl = (OrderWaitingTimeController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goDeliver (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Deliver.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		DeliverController ctrl = (DeliverController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goCalcOrderRevenue (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/CalcOrderRevenue.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		CalcOrderRevenueController ctrl = (CalcOrderRevenueController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goGetDeliveriesByPerson (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetDeliveriesByPerson.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		GetDeliveriesByPersonController ctrl = (GetDeliveriesByPersonController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goGetNumberOfDeliveriesPerType (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetNumberOfDeliveriesPerType.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		GetNumberOfDeliveriesPerTypeController ctrl = (GetNumberOfDeliveriesPerTypeController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goRevenueFromExpressDeliveries (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RevenueFromExpressDeliveries.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		RevenueFromExpressDeliveriesController ctrl = (RevenueFromExpressDeliveriesController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goGetProfitRelation (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetProfitRelation.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		GetProfitRelationController ctrl = (GetProfitRelationController) fx.getController();
+//		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goCreateAIMacine (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/CreateAIMacine.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+//		CreateAIMacineController ctrl = (CreateAIMacineController) fx.getController();
+//		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	

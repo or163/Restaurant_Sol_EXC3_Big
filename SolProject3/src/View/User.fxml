@@ -18,7 +18,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" text="home" />
                   <MenuItem mnemonicParsing="false" onAction="#SaveToSerelizebaleFile" text="save" />
-                <MenuItem mnemonicParsing="false" text="log-out" />
+                <MenuItem mnemonicParsing="false" onAction="#GoLogin" text="log-out" />
               </items>
                <effect>
                   <DropShadow>

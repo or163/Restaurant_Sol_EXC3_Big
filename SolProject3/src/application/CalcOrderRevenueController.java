@@ -10,4 +10,9 @@ public class CalcOrderRevenueController {
 	
 	@FXML
 	private Label l;
+
+	public void initData() {
+		// TODO Auto-generated method stub
+		
+	}
 }
