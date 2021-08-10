@@ -49,6 +49,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#goAddComponent" text="add component" />
                   <MenuItem mnemonicParsing="false" onAction="#goAddDish" text="add dish" />
                   <MenuItem mnemonicParsing="false" onAction="#goAddOrder" text="add order" />
+                  <MenuItem mnemonicParsing="false" onAction="#goAddDelivery" text="add delivery" />
+                  <MenuItem mnemonicParsing="false" onAction="#goAddDA" text="add delivery area" />
                </items>
                <effect>
                   <DropShadow>
@@ -66,6 +68,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveComponent" text="remove component" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveDish" text="remove dish" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveOrder" text="remove order" />
+                  <MenuItem mnemonicParsing="false" onAction="#goRemoveDA" text="remove delivery area" />
                </items>
                <effect>
                   <DropShadow>
