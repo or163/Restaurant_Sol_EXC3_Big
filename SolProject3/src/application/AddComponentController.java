@@ -1,6 +1,5 @@
 package application;
 
-import java.time.LocalDate;
 
 import Model.Component;
 import javafx.event.ActionEvent;

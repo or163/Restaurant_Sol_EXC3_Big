@@ -28,6 +28,16 @@ public class UserController {
 	}
 	
 	@FXML
+	void goGetCooksByExpertise (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetCookByExpertise.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GetCookByExpertiseController ctrl = (GetCookByExpertiseController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
 	private void goEdit(ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/EditUser.fxml"));
 		Pane p = fx.load();
