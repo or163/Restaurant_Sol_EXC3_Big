@@ -3,7 +3,6 @@ package application;
 import java.util.Collection;
 
 import Model.Component;
-import Model.Customer;
 import Model.Dish;
 import Utils.DishType;
 import javafx.fxml.FXML;
