@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,6 +17,7 @@ import Exceptions.SensitiveException;
 import Utils.Expertise;
 import Utils.MyFileLogWriter;
 import Utils.Neighberhood;
+import Utils.OrderComparator;
 
 public class Restaurant implements Serializable {
 
@@ -347,32 +349,21 @@ public class Restaurant implements Serializable {
 		} finally {
 			delivery.getArea().addDelivery(delivery);
 			if (delivery instanceof RegularDelivery) {
+				OrderComparator ordComparator = new OrderComparator();
 				RegularDelivery rg = (RegularDelivery) delivery;
 				for (Order o : rg.getOrders()) {
 					TreeSet<Order> orders = orderByCustomer.get(o);
 					if (orders == null)
-						orders = new TreeSet<>(new Comparator<Order>() {
-
-							@Override
-							public int compare(Order o1, Order o2) {
-								return o1.getDelivery().getDeliveredDate()
-										.compareTo(o2.getDelivery().getDeliveredDate());
-							}
-						});
+						orders = new TreeSet<>(ordComparator);
 					orders.add(o);
 					orderByCustomer.put(o.getCustomer(), orders);
 				}
 			} else {
+				OrderComparator ordComparator = new OrderComparator();
 				ExpressDelivery ex = (ExpressDelivery) delivery;
 				TreeSet<Order> orders = orderByCustomer.get(ex.getOrder());
 				if (orders == null)
-					orders = new TreeSet<>(new Comparator<Order>() {
-
-						@Override
-						public int compare(Order o1, Order o2) {
-							return o1.getDelivery().getDeliveredDate().compareTo(o2.getDelivery().getDeliveredDate());
-						}
-					});
+					orders = new TreeSet<>(ordComparator);
 				orders.add(ex.getOrder());
 				orderByCustomer.put(ex.getOrder().getCustomer(), orders);
 			}

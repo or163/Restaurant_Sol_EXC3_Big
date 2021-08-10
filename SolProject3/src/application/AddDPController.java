@@ -2,10 +2,8 @@ package application;
 
 import java.time.LocalDate;
 
-import Model.Cook;
 import Model.DeliveryArea;
 import Model.DeliveryPerson;
-import Utils.Expertise;
 import Utils.Gender;
 import Utils.Vehicle;
 import javafx.event.ActionEvent;
@@ -57,18 +55,18 @@ public class AddDPController {
 			DeliveryPerson dp = new DeliveryPerson(txtFName.getText(), txtLName.getText(), bday, gend, car, d);
 			Main.restaurant.addDeliveryPerson(dp, d);
 			message.setText("saved succesfully");
-			initData();
-			System.out.println(Main.restaurant.getCooks());
+			Utils.Utils.initDate(date);
+			txtLName.clear();
+			txtFName.clear();
+			gender.getSelectionModel().clearSelection();
+			vehicle.getSelectionModel().clearSelection();
+			da.getSelectionModel().clearSelection();
+			System.out.println(Main.restaurant.getDeliveryPersons());
 		}
 	}
 
 	public void initData() {
 		// TODO Auto-generated method stub
-		txtLName.clear();
-		txtFName.clear();
-		gender.getSelectionModel().clearSelection();
-		vehicle.getSelectionModel().clearSelection();
-		da.getSelectionModel().clearSelection();
 		Utils.Utils.initDate(date);
 		for (Gender g : Gender.values())
 			gender.getItems().add(g);
