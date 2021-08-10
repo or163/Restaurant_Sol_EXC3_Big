@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /** 
  * A utility class for logging output text to a file
  * note: final means that we can't extends this class
@@ -40,13 +43,12 @@ public final class MyFileLogWriter{
 	 */
 	public static void println(String message){
 
-		try {
-			writer.write(message);
-			writer.write(System.getProperty("line.separator"));
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		Alert a = new Alert(AlertType.INFORMATION);
+		a.setTitle("Message");
+		a.setContentText(message);
+		a.setResizable(true);
+		a.getDialogPane().setPrefWidth(500);
+		a.show();
 	}
 
 	/**

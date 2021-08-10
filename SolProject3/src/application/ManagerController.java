@@ -195,7 +195,16 @@ public class ManagerController {
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
-
+	
+	@FXML
+	void goGetPopularComponents (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetPopularComponents.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GetPopularComponentsController ctrl = (GetPopularComponentsController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
 	
 	@FXML
     void goRemoveDA(ActionEvent event) throws IOException{

@@ -4,8 +4,10 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.TreeSet;
 
+import Model.Delivery;
 import Model.DeliveryArea;
 import Model.DeliveryPerson;
+import Model.ExpressDelivery;
 import Model.Order;
 import Model.RegularDelivery;
 import Utils.Expertise;
@@ -91,16 +93,26 @@ public class AddDeliveryController {
 			lblStatus.setText("Please fill all fields");//maybe we should put all as execptions?
 			lblStatus.setTextFill(Color.RED);
 		}
+    	else if(selected.getItems().size() == 1) {
+    		Order o = selected.getItems().get(0);
+    		Delivery d = new ExpressDelivery(delPer,delAre,isDel,o,100,datte);
+    		Main.restaurant.addDelivery(d);
+    	}
     	else {
     	TreeSet<Order> ts = new TreeSet<Order>();
 		ts.addAll(selected.getItems());
-		RegularDelivery d = new RegularDelivery(delPer,delAre,isDel,datte);
-		lblStatus.setText("Delivery Area was added successfully");
-		lblStatus.setTextFill(Color.GREEN);
+		Delivery d = new RegularDelivery(ts,delPer,delAre,isDel,datte);
 		Main.restaurant.addDelivery(d);
-		initData();
-		System.out.println(Main.restaurant.getAreas());
     	}
+		lblStatus.setText("Delivery was added successfully");
+		lblStatus.setTextFill(Color.GREEN);
+		deliveryPersons.getSelectionModel().clearSelection();
+		deliveryArea.getSelectionModel().clearSelection();
+		orders.getSelectionModel().clearSelection();
+		selected.getItems().clear();
+		deliveyTG.getSelectedToggle().setSelected(false);
+		Utils.Utils.initDate(date);
+		System.out.println(Main.restaurant.getDeliveries());
     }
 	
 
@@ -110,7 +122,7 @@ public class AddDeliveryController {
 		deliveryPersons.getItems().addAll(Main.restaurant.getDeliveryPersons().values());
 		deliveryArea.getItems().addAll(Main.restaurant.getAreas().values());
 		orders.getItems().addAll(Main.restaurant.getOrders().values());
-		orders.getSelectionModel().clearSelection();
+		//orders.getSelectionModel().clearSelection();
 //		deliveyTG.getSelectedToggle().setSelected(false);
 		selected.getItems().clear();
 	}
