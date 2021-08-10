@@ -90,12 +90,12 @@ public class AddDeliveryController {
     	if(delPer == null || delAre == null || selected.getItems().isEmpty()|| selected.getItems() == null 
     		|| datte == null || deliveyTG.getSelectedToggle() == null)
 		{
-			lblStatus.setText("Please fill all fields");//maybe we should put all as execptions?
+			lblStatus.setText("Please fill all fields");//maybe we should put all as exceptions?
 			lblStatus.setTextFill(Color.RED);
 		}
     	else if(selected.getItems().size() == 1) {
     		Order o = selected.getItems().get(0);
-    		Delivery d = new ExpressDelivery(delPer,delAre,isDel,o,100,datte);
+    		Delivery d = new ExpressDelivery(delPer,delAre,isDel,o,datte);
     		Main.restaurant.addDelivery(d);
     	}
     	else {

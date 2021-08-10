@@ -70,6 +70,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveDish" text="remove dish" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveOrder" text="remove order" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveDA" text="remove delivery area" />
+                  <MenuItem mnemonicParsing="false" onAction="#goRemoveDelivery" text="remove delivery" />
                </items>
                <effect>
                   <DropShadow>
