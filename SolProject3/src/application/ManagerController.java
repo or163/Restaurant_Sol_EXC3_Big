@@ -8,7 +8,6 @@ import Remove.RemoveCookController;
 import Remove.RemoveCustomerController;
 import Remove.RemoveDAController;
 import Remove.RemoveDPController;
-import Remove.RemoveDeliveryController;
 import Remove.RemoveDishController;
 import Remove.RemoveOrderController;
 import Utils.SerializableWiz;
@@ -176,15 +175,6 @@ public class ManagerController {
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
-	 @FXML
-	    void goRemoveDelivery(ActionEvent event) throws IOException{
-		 FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDelivery.fxml"));
-			Pane p = fx.load();
-			AnchorPane pp = (AnchorPane) p;
-			RemoveDeliveryController ctrl = (RemoveDeliveryController) fx.getController();
-			ctrl.initData();
-			pannelRoot.setCenter(pp);
-	    }
 	
 	@FXML
 	void goGRLDList(ActionEvent event) throws IOException {
