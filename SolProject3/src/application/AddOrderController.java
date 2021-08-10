@@ -29,24 +29,23 @@ public class AddOrderController {
 	private ListView<Dish> dishV;
 
 	@FXML
-	private ListView<Delivery> delV;
-
-	@FXML
     void save(ActionEvent event) {
     	Customer cust = custV.getSelectionModel().getSelectedItem();
-    	Delivery del = delV.getSelectionModel().getSelectedItem();
     	List<Dish> list = selected.getItems();
 		ArrayList<Dish> dishes = new ArrayList<>(list);
-		if (cust == null || del == null || list == null) {
+		if (cust == null || list == null) {
 			message.setText("you have fields that are empty");
 		} else {
-			Order order = new Order(cust, dishes, del);
-			Main.restaurant.addOrder(order);
-			message.setText("saved succesfully");
-			custV.getSelectionModel().clearSelection();
-			dishV.getSelectionModel().clearSelection();
-			selected.getItems().clear();
-			System.out.println(Main.restaurant.getOrders());
+			Order order = new Order(cust, dishes, null);
+			if(Main.restaurant.addOrder(order)){
+				message.setText("saved succesfully");
+				custV.getSelectionModel().clearSelection();
+				dishV.getSelectionModel().clearSelection();
+				selected.getItems().clear();
+				System.out.println(Main.restaurant.getOrders());
+			}
+			else
+				Order.setIdCounter(Order.getIdCounter() - 1);
 		}
     }
 		
@@ -57,13 +56,12 @@ public class AddOrderController {
 			custV.getItems().add(c);
 		for (Dish d : Main.restaurant.getDishes().values())
 			dishV.getItems().add(d);
-		for (Delivery d : Main.restaurant.getDeliveries().values())
-			delV.getItems().add(d);
 	}
 
 	@FXML
 	private void addDish(ActionEvent e) {
-		selected.getItems().add(dishV.getSelectionModel().getSelectedItem());
+		if(dishV.getSelectionModel().getSelectedItem() != null)
+			selected.getItems().add(dishV.getSelectionModel().getSelectedItem());
 	}
 
 	@FXML
