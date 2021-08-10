@@ -23,6 +23,7 @@ public class SerializableWiz {
 	         out.close();
 	         fileOut.close();
 	         System.out.printf("Serialized data is saved in "+SER_PATH);
+	         System.out.println();
 	      } catch (IOException i) {
 	    	 throw new DBManagerException("Error in save - "+i.getLocalizedMessage());
 	      }
