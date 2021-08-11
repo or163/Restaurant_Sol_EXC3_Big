@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 
@@ -21,6 +22,9 @@ public class RemoveComponentController {
     @FXML
     private Label message;
 
+    @FXML
+    private TextField id;
+    
     public void initData(){
 
 		compLV.getItems().clear();
@@ -29,6 +33,13 @@ public class RemoveComponentController {
 		}
 	}
 
+    @FXML
+    private void getComponent(ActionEvent event) {
+        if (!Utils.Utils.isOnlyDigits(id.getText()))
+        	return;
+        Component comp = Main.restaurant.getRealComponent(Integer.parseInt(id.getText()));
+    	compLV.getSelectionModel().select(comp);
+    }
 
 	//this Method Initialize the input fields of the class//
 	@FXML
