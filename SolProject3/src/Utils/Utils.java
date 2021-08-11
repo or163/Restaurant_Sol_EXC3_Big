@@ -28,16 +28,10 @@ public class Utils {
 	
 	public static boolean isOnlyDigits(String str) {
         for (int i = 0; i < str.length(); i++) {
-  
-            if (str.charAt(i) >= '0'
-                && str.charAt(i) <= '9') {
-                return true;
-            }
-            else {
+            if (str.charAt(i) < '0' || str.charAt(i) > '9')
                 return false;
-            }
         }
-        return false;
+        return true;
     }
 	
     public static boolean isValidPassword(String password, Label message)

@@ -318,8 +318,6 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-		// CookController ctrl = (CookController) fx.getController();
-		// ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
