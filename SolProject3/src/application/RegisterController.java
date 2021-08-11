@@ -6,11 +6,14 @@ import java.time.LocalDate;
 import Model.Customer;
 import Utils.Gender;
 import Utils.Neighberhood;
+import Utils.SerializableWiz;
+import Utils.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
@@ -20,6 +23,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 
 public class RegisterController {
 
@@ -69,7 +73,7 @@ public class RegisterController {
     private ComboBox<Neighberhood> neighborhood;
 
     public void initData() {
-    	Utils.Utils.initDate(date);
+    	Utils.initDate(date);
 		for(Gender g : Gender.values())
 			gender.getItems().add(g);
 		for(Neighberhood n : Neighberhood.values())
@@ -94,12 +98,17 @@ public class RegisterController {
 				bday == null || lactoseTG.getSelectedToggle() == null || glutenTG.getSelectedToggle() == null) {
 			message.setText("you have fields that are empty");
 		}
-		else if(passw.getText().length() < 6)
-			message.setText("Password is too short, type at least 6 characters");
+		else if(Utils.isValidPassword(passw.getText(),message)==false)
+			;
 		else {
 			Customer cust = new Customer(txtFName.getText(), txtLName.getText(), bday, gend, neigh, lact, glut,
 					userName.getText(), passw.getText());
 			Main.restaurant.addCustomer(cust);
+			try {
+				SerializableWiz.save(Main.restaurant);
+			}catch (Exception e) {
+				System.err.println(e.getLocalizedMessage());
+			}
 			message.setText("saved succesfully");
 			lactoseTG.getSelectedToggle().setSelected(false);
 			glutenTG.getSelectedToggle().setSelected(false);
@@ -109,7 +118,7 @@ public class RegisterController {
 			txtFName.clear();
 			gender.getSelectionModel().clearSelection();
 			neighborhood.getSelectionModel().clearSelection();
-			Utils.Utils.initDate(date);
+			Utils.initDate(date);
 			try {
 				FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/User.fxml"));
 				Parent p;

@@ -6,6 +6,7 @@ import Model.Cook;
 import Model.Customer;
 import Utils.Gender;
 import Utils.Neighberhood;
+import Utils.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -83,8 +84,8 @@ public class AddCustomerController {
 				bday == null || lactoseTG.getSelectedToggle() == null || glutenTG.getSelectedToggle() == null) {
 			message.setText("you have fields that are empty");
 		}
-		else if(passw.getText().length() < 6)
-			message.setText("Password is too short, type at least 6 characters");
+		else if(Utils.isValidPassword(passw.getText(),message)==false)
+			;
 		else {
 			Customer cust = new Customer(txtFName.getText(), txtLName.getText(), bday, gend, neigh, lact, glut,
 					userName.getText(), passw.getText());
@@ -98,13 +99,13 @@ public class AddCustomerController {
 			txtFName.clear();
 			gender.getSelectionModel().clearSelection();
 			neighborhood.getSelectionModel().clearSelection();
-			Utils.Utils.initDate(date);
+			Utils.initDate(date);
 			System.out.println(Main.restaurant.getCustomers());
 		}
 	}
     
     public void initData() {
-		Utils.Utils.initDate(date);
+		Utils.initDate(date);
 		for(Gender g : Gender.values())
 			gender.getItems().add(g);
 		for(Neighberhood n : Neighberhood.values())

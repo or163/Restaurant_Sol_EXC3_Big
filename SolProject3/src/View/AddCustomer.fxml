@@ -49,7 +49,7 @@
       <DatePicker fx:id="date" layoutX="121.0" layoutY="215.0" prefHeight="32.0" prefWidth="101.0" />
       <ChoiceBox fx:id="gender" layoutX="121.0" layoutY="260.0" prefHeight="25.0" prefWidth="101.0" />
       <PasswordField fx:id="passw" layoutX="122.0" layoutY="104.0" prefHeight="30.0" prefWidth="100.0" />
-      <Label fx:id="message" layoutX="261.0" layoutY="462.0" prefHeight="17.0" prefWidth="180.0" textFill="#ef1414" />
+      <Label fx:id="message" layoutX="26.0" layoutY="409.0" prefHeight="17.0" prefWidth="541.0" style="-fx-background-color: #ffffff80; -fx-background-radius: 12;" textFill="#ef1414" />
       <ComboBox fx:id="neighborhood" layoutX="121.0" layoutY="299.0" prefHeight="25.0" prefWidth="101.0" />
    </children>
 </AnchorPane>

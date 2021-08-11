@@ -18,7 +18,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#goHome" text="home" />
                   <MenuItem mnemonicParsing="false" onAction="#SaveToSerelizebaleFile" text="save" />
-                <MenuItem mnemonicParsing="false" text="log-out" />
+                <MenuItem mnemonicParsing="false" onAction="#GoLogin" text="log-out" />
               </items>
                <effect>
                   <DropShadow>
@@ -33,7 +33,14 @@
                   <MenuItem mnemonicParsing="false" onAction="#goGRLDList" text="get relevant dish list" />
                   <MenuItem mnemonicParsing="false" onAction="#goGetCooksByExpertise" text="get cooks by expertise" />
                   <MenuItem mnemonicParsing="false" onAction="#goGetPopularComponents" text="get popular components" />
-                  <MenuItem mnemonicParsing="false" onAction="#goCheck" text="chart" />
+                  <MenuItem mnemonicParsing="false" onAction="#goOrderWaitingTime" text="order waiting time" />
+                  <MenuItem mnemonicParsing="false" onAction="#goDeliver" text="deliver" />
+                  <MenuItem mnemonicParsing="false" onAction="#goCalcOrderRevenue" text="calc order revenue" />
+                  <MenuItem mnemonicParsing="false" onAction="#goGetDeliveriesByPerson" text="get deliveries by person" />
+                  <MenuItem mnemonicParsing="false" onAction="#goGetNumberOfDeliveriesPerType" text="get number of deliveries per type" />
+                  <MenuItem mnemonicParsing="false" onAction="#goRevenueFromExpressDeliveries" text="revenue from express deliveries" />
+                  <MenuItem mnemonicParsing="false" onAction="#goGetProfitRelation" text="get profit relation" />
+                  <MenuItem mnemonicParsing="false" onAction="#goCreateAIMacine" text="create AI macine" />
                </items>
                <effect>
                   <DropShadow>
@@ -70,8 +77,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveComponent" text="remove component" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveDish" text="remove dish" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveOrder" text="remove order" />
-                  <MenuItem mnemonicParsing="false" onAction="#goRemoveDA" text="remove delivery area" />
                   <MenuItem mnemonicParsing="false" onAction="#goRemoveDelivery" text="remove delivery" />
+                  <MenuItem mnemonicParsing="false" onAction="#goRemoveDA" text="remove delivery area" />
                </items>
                <effect>
                   <DropShadow>
