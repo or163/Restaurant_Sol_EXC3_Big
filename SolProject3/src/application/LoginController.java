@@ -66,7 +66,7 @@ public class LoginController {
 			for (Customer c : Main.restaurant.getCustomers().values()) {
 				if (c.getUserName().equals(un)) {
 					if (c.getPassword().equals(pass)) { // if the password match the user name
-						this.customer = c;
+						LoginController.customer = c;
 						try {
 							FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/User.fxml"));
 							Parent p = fx.load();
@@ -111,7 +111,8 @@ public class LoginController {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public static void setCustomer(Customer customer) {
+		LoginController.customer = customer;
 	}
+
 }

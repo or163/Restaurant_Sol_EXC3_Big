@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 
-import Model.Dish;
 import Remove.RemoveComponentController;
 import Remove.RemoveCookController;
 import Remove.RemoveCustomerController;
@@ -19,8 +18,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -184,15 +181,26 @@ public class ManagerController {
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
-	 @FXML
-	    void goRemoveDelivery(ActionEvent event) throws IOException{
-		 FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDelivery.fxml"));
-			Pane p = fx.load();
-			AnchorPane pp = (AnchorPane) p;
-			RemoveDeliveryController ctrl = (RemoveDeliveryController) fx.getController();
-			ctrl.initData();
-			pannelRoot.setCenter(pp);
-	    }
+	
+	@FXML
+	void goRemoveDA(ActionEvent event) throws IOException{
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDA.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		RemoveDAController ctrl = (RemoveDAController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goRemoveDelivery(ActionEvent event) throws IOException{
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDelivery.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		RemoveDeliveryController ctrl = (RemoveDeliveryController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
 	
 	@FXML
 	void goGRLDList(ActionEvent event) throws IOException {
@@ -229,8 +237,8 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/OrderWaitingTime.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-//		OrderWaitingTimeController ctrl = (OrderWaitingTimeController) fx.getController();
-//		ctrl.initData();
+		OrderWaitingTimeController ctrl = (OrderWaitingTimeController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
@@ -239,8 +247,8 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Deliver.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-//		DeliverController ctrl = (DeliverController) fx.getController();
-//		ctrl.initData();
+		DeliverController ctrl = (DeliverController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
@@ -249,8 +257,8 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/CalcOrderRevenue.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-//		CalcOrderRevenueController ctrl = (CalcOrderRevenueController) fx.getController();
-//		ctrl.initData();
+		CalcOrderRevenueController ctrl = (CalcOrderRevenueController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
@@ -259,8 +267,8 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetDeliveriesByPerson.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-//		GetDeliveriesByPersonController ctrl = (GetDeliveriesByPersonController) fx.getController();
-//		ctrl.initData();
+		GetDeliveriesByPersonController ctrl = (GetDeliveriesByPersonController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
@@ -304,15 +312,6 @@ public class ManagerController {
 		pannelRoot.setCenter(pp);
 	}
 	
-	@FXML
-    void goRemoveDA(ActionEvent event) throws IOException{
-	 FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/RemoveDA.fxml"));
-		Pane p = fx.load();
-		AnchorPane pp = (AnchorPane) p;
-		RemoveDAController ctrl = (RemoveDAController) fx.getController();
-		ctrl.initData();
-		pannelRoot.setCenter(pp);
-    }
 
 	@FXML
 	void goOut(ActionEvent event) throws IOException {

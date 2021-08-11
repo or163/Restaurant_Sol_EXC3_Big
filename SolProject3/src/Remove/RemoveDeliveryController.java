@@ -43,6 +43,7 @@ public class RemoveDeliveryController {
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Confirmation");
+			alert.dialogPaneProperty().get().setPrefWidth(600);
 			alert.setHeaderText(dellLV.getSelectionModel().getSelectedItem() + " has been chosen");
 			alert.setContentText("Are you sure you want to delete this one?");
 			Optional<ButtonType> result = alert.showAndWait();

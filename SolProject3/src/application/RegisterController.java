@@ -124,6 +124,7 @@ public class RegisterController {
 				Parent p;
 				p = fx.load();
 				UserController ctrl = (UserController) fx.getController();
+				LoginController.setCustomer(cust);
 				ctrl.initData(cust);
 				Scene s = new Scene(p, 700, 500);
 				Main.stage.setScene(s);

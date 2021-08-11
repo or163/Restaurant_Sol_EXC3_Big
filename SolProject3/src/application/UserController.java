@@ -3,7 +3,6 @@ package application;
 import java.io.IOException;
 
 import Model.Customer;
-import Remove.RemoveDishController;
 import Utils.SerializableWiz;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,16 +37,6 @@ public class UserController {
     }
 	
 	@FXML
-	void goGetCooksByExpertise (ActionEvent event) throws IOException {
-		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetCookByExpertise.fxml"));
-		Pane p = fx.load();
-		AnchorPane pp = (AnchorPane) p;
-		GetCookByExpertiseController ctrl = (GetCookByExpertiseController) fx.getController();
-		ctrl.initData();
-		pannelRoot.setCenter(pp);
-	}
-	
-	@FXML
 	private void goEdit(ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/EditUser.fxml"));
 		Pane p = fx.load();
@@ -63,6 +52,26 @@ public class UserController {
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
 		GRLDishListUserController ctrl = (GRLDishListUserController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goGetCooksByExpertise (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetCookByExpertise.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GetCookByExpertiseController ctrl = (GetCookByExpertiseController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goGetPopularComponents (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetPopularComponents.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		GetPopularComponentsController ctrl = (GetPopularComponentsController) fx.getController();
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
