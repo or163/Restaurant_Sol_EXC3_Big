@@ -33,6 +33,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#goGRLDList" text="get relevant dish list" />
                   <MenuItem mnemonicParsing="false" onAction="#goGetCooksByExpertise" text="get cooks by expertise" />
                   <MenuItem mnemonicParsing="false" onAction="#goGetPopularComponents" text="get popular components" />
+                  <MenuItem mnemonicParsing="false" onAction="#goCheck" text="chart" />
                </items>
                <effect>
                   <DropShadow>
