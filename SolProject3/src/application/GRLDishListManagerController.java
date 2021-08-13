@@ -74,6 +74,7 @@ public class GRLDishListManagerController {
 		if (c == null)
 			message.setText("Please select a custoemr!");
 		else {
+			message.setText("");
 			dishesLV.setVisible(true);
 			Collection<Dish> list = Main.restaurant.getReleventDishList(c);
 			for (Dish d : list) {

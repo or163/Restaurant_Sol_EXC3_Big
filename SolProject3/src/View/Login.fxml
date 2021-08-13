@@ -5,30 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <Hyperlink fx:id="register" layoutX="230.0" layoutY="208.0" onAction="#signup" text="Not a member? register here" />
-      <Label layoutX="145.0" layoutY="90.0" prefHeight="25.0" prefWidth="91.0" text="User-name :">
+      <Label alignment="TOP_CENTER" layoutX="81.0" layoutY="29.0" prefHeight="17.0" prefWidth="438.0" text="Log-In">
          <font>
-            <Font size="16.0" />
+            <Font name="Times New Roman Bold" size="36.0" />
          </font>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="61.0" layoutY="30.0" prefHeight="17.0" prefWidth="438.0" text="Log-In">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="145.0" layoutY="127.0" prefHeight="25.0" prefWidth="91.0" text="Password :">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="user" layoutX="237.0" layoutY="90.0" />
-      <PasswordField fx:id="passw" layoutX="237.0" layoutY="127.0" />
-      <Label fx:id="message" layoutX="114.0" layoutY="260.0" prefHeight="17.0" prefWidth="143.0" textFill="#ef2727" />
-      <Button fx:id="signIn" layoutX="285.0" layoutY="166.0" mnemonicParsing="false" onAction="#login" text="sign-in" />
+      <Pane layoutX="152.0" layoutY="112.0" prefHeight="251.0" prefWidth="295.0" style="-fx-border-color: red; -fx-background-color: beige;">
+         <children>
+            <TextField fx:id="user" layoutX="46.0" layoutY="37.0" prefHeight="25.0" prefWidth="201.0" promptText="User Name" style="-fx-background-color: transparent;" />
+            <PasswordField fx:id="passw" layoutX="47.0" layoutY="83.0" prefHeight="25.0" prefWidth="201.0" promptText="Password" style="-fx-background-color: transparent;" />
+            <Button fx:id="signIn" layoutX="102.0" layoutY="143.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 0; -fx-background-color: grey;" text="sign-in">
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <Line endX="100.0" layoutX="147.0" layoutY="64.0" startX="-100.0" stroke="RED" />
+            <Line endX="100.0" layoutX="147.0" layoutY="110.0" startX="-100.0" stroke="RED" />
+            <Hyperlink fx:id="register" layoutX="55.0" layoutY="182.0" onAction="#signup" text="Not a member? register here" />
+            <Label fx:id="message" layoutX="47.0" layoutY="214.0" prefHeight="17.0" prefWidth="201.0" textFill="#ef2727" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
