@@ -6,6 +6,8 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import Model.Customer;
+import application.Main;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -67,5 +69,13 @@ public class Utils {
                     isValid = false;
             }
             return isValid; 
+    }
+    
+    public static boolean userNameExists(String passw) {
+    	for(Customer c : Main.restaurant.getCustomers().values()) {
+    		if(c.getUserName().equals(passw))
+    			return true;
+    	}
+    	return false;		
     }
 }

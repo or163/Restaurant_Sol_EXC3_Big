@@ -12,7 +12,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCustomerController">
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="addcook" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCustomerController">
    <children>
       <Label alignment="TOP_CENTER" layoutX="96.0" layoutY="14.0" prefHeight="17.0" prefWidth="385.0" text="add customer">
          <font>
@@ -27,12 +28,14 @@
       <RadioButton fx:id="lactoseYes" layoutX="147.0" layoutY="338.0" mnemonicParsing="false" text="Yes">
          <toggleGroup>
             <ToggleGroup fx:id="lactoseTG" />
-         </toggleGroup></RadioButton>
+         </toggleGroup>
+      </RadioButton>
       <RadioButton fx:id="lactoseNo" layoutX="197.0" layoutY="338.0" mnemonicParsing="false" text="No" toggleGroup="$lactoseTG" />
       <RadioButton fx:id="glutenYes" layoutX="147.0" layoutY="375.0" mnemonicParsing="false" text="Yes">
          <toggleGroup>
             <ToggleGroup fx:id="glutenTG" />
-         </toggleGroup></RadioButton>
+         </toggleGroup>
+      </RadioButton>
       <RadioButton fx:id="glutenNo" layoutX="197.0" layoutY="375.0" mnemonicParsing="false" text="No" toggleGroup="$glutenTG" />
       <Label layoutX="24.0" layoutY="99.0" prefHeight="40.0" prefWidth="90.0" text="Password :" />
       <Label layoutX="24.0" layoutY="59.0" prefHeight="40.0" prefWidth="90.0" text="User Name :" />

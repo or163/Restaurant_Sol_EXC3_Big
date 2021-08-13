@@ -1,5 +1,11 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .bodybg{
  -fx-background-image: url('/View/restaurant-management.jpg');
- -fx-background-size: 100% 100%;
+ -fx-background-size: 100.0% 100.0%;
+}
+.addcook{
+ -fx-background-image: url('/View/cooks.png');
+}
+.button:hover{
+ -fx-border-style: solid;  
 }

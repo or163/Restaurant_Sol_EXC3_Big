@@ -86,6 +86,8 @@ public class AddCustomerController {
 		}
 		else if(Utils.isValidPassword(passw.getText(),message)==false)
 			;
+		else if(Utils.userNameExists(userName.getText()))
+			message.setText("User already exists, choose different user name");
 		else {
 			Customer cust = new Customer(txtFName.getText(), txtLName.getText(), bday, gend, neigh, lact, glut,
 					userName.getText(), passw.getText());
