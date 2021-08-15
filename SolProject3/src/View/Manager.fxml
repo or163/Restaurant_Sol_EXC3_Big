@@ -90,6 +90,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#goRevenueFromExpressDeliveries" text="revenue from express deliveries" />
                         <MenuItem mnemonicParsing="false" onAction="#goGetProfitRelation" text="get profit relation" />
                         <MenuItem mnemonicParsing="false" onAction="#goCreateAIMacine" text="create AI macine" />
+                        <MenuItem mnemonicParsing="false" onAction="#goaddCustomerToBlackList" text="add Customer To BlackList" />
                      </items>
                   </MenuButton>
                   <MenuButton contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" popupSide="RIGHT" prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: DARKBLUE; -fx-background-radius: 0; -fx-border-color: grey;" text="Exit" textFill="WHITE">
