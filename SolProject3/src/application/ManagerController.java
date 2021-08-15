@@ -287,8 +287,8 @@ public class ManagerController {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/GetNumberOfDeliveriesPerType.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-//		GetNumberOfDeliveriesPerTypeController ctrl = (GetNumberOfDeliveriesPerTypeController) fx.getController();
-//		ctrl.initData();
+		GetNumberOfDeliveriesPerTypeController ctrl = (GetNumberOfDeliveriesPerTypeController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
@@ -314,11 +314,21 @@ public class ManagerController {
 	
 	@FXML
 	void goCreateAIMacine (ActionEvent event) throws IOException {
-		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Add.fxml"));
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/CreateAIMacine.fxml"));
 		Pane p = fx.load();
 		AnchorPane pp = (AnchorPane) p;
-		AddController ctrl = (AddController) fx.getController();
-		ctrl.setPannelRoot(pannelRoot);
+		CreateAIMacineController ctrl = (CreateAIMacineController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void goaddCustomerToBlackList (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/addCustomerToBlackList.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		addCustomerToBlackListController ctrl = (addCustomerToBlackListController) fx.getController();
+		ctrl.initData();
 		pannelRoot.setCenter(pp);
 	}
 	
