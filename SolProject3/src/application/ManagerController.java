@@ -332,6 +332,18 @@ public class ManagerController {
 		pannelRoot.setCenter(pp);
 	}
 	
+	
+	@FXML
+	void goDatabases (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/viewDatabases.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		viewDatabasesController ctrl = (viewDatabasesController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
+	
+	
 	@FXML
 	void goAdd (ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Add.fxml"));

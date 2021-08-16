@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.viewDatabasesController">
+   <children>
+      <Label alignment="CENTER" layoutX="181.0" layoutY="40.0" prefHeight="35.0" prefWidth="263.0" style="-fx-background-color: #ffffff80; -fx-background-radius: 12;" text="View Data Bases">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="ChosenData" layoutX="232.0" layoutY="83.0" onAction="#GetData" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="68.0" layoutY="83.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffffff80; -fx-background-radius: 12;" text="chose which data to view" />
+      <ListView fx:id="LVdb" layoutX="36.0" layoutY="133.0" prefHeight="325.0" prefWidth="550.0" />
+   </children>
+</AnchorPane>

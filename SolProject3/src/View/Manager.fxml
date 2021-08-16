@@ -46,6 +46,7 @@
                   <MenuButton contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" popupSide="RIGHT" prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: DARKBLUE; -fx-background-radius: 1; -fx-border-color: grey;" text="System" textFill="WHITE">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#goHome" text="home" />
+                        <MenuItem mnemonicParsing="false" onAction="#goDatabases" text="view databases" />
                         <MenuItem mnemonicParsing="false" onAction="#SaveToSerelizebaleFile" text="save" />
                       <MenuItem mnemonicParsing="false" onAction="#GoLogin" text="log-out" />
                     </items>
