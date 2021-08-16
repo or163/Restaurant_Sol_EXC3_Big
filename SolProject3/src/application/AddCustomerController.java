@@ -55,7 +55,7 @@ public class AddCustomerController {
     private DatePicker date;
 
     @FXML
-    private ChoiceBox<Gender> gender;
+    private ComboBox<Gender> gender;
 
     @FXML
     private ComboBox<Neighberhood> neighborhood;
@@ -102,6 +102,7 @@ public class AddCustomerController {
 			gender.getSelectionModel().clearSelection();
 			neighborhood.getSelectionModel().clearSelection();
 			Utils.initDate(date);
+			System.out.println(bday);
 			System.out.println(Main.restaurant.getCustomers());
 		}
 	}

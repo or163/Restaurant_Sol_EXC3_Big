@@ -25,6 +25,7 @@ public class Main extends Application {
 			Parent p = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
 			Scene scene = new Scene(p, 700, 500);
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Restaurant");
 			primaryStage.show();
 			stage = primaryStage;
 		} catch (Exception e) {

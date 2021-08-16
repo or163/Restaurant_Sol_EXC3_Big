@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RemoveController">
    <children>
-      <Circle layoutX="134.0" layoutY="91.0" onMouseClicked="#goAddCook" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="134.0" layoutY="91.0" onMouseClicked="#goRemoveCook" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -22,7 +22,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" />
+                        <Color red="0.9200000166893005" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007633587786259542">
+                     <color>
+                        <Color red="0.9200000166893005" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -34,12 +39,17 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Label layoutX="98.0" layoutY="113.0" prefHeight="28.0" prefWidth="81.0" text="Add Cook" textFill="WHITE">
+      <ImageView fitHeight="78.0" fitWidth="73.0" layoutX="98.0" layoutY="35.0">
+         <image>
+            <Image url="@../../../../../AppData/Local/Temp/icons8_woman_cook_96px_1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="83.0" layoutY="113.0" prefHeight="28.0" prefWidth="103.0" text="Remove Cook" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Circle layoutX="307.0" layoutY="91.0" onMouseClicked="#goAddComponent" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="307.0" layoutY="91.0" onMouseClicked="#goRemoveComponent" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -48,7 +58,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -65,12 +75,12 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_ingredients_200px.png" />
          </image>
       </ImageView>
-      <Label layoutX="247.0" layoutY="113.0" prefHeight="28.0" prefWidth="124.0" text="Add Component" textFill="WHITE">
+      <Label layoutX="247.0" layoutY="113.0" prefHeight="40.0" prefWidth="124.0" text="       Remove&#10;    Component" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Circle layoutX="480.0" layoutY="91.0" onMouseClicked="#goAddCustomer" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="480.0" layoutY="91.0" onMouseClicked="#goRemoveCustomer" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -79,7 +89,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -96,12 +106,12 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_customer_100px.png" />
          </image>
       </ImageView>
-      <Label layoutX="429.0" layoutY="115.0" prefHeight="28.0" prefWidth="113.0" text="Add Customer" textFill="WHITE">
+      <Label layoutX="429.0" layoutY="115.0" prefHeight="40.0" prefWidth="113.0" text="    Remove &#10;   Customer" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Circle layoutX="307.0" layoutY="250.0" onMouseClicked="#goAddDish" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="307.0" layoutY="250.0" onMouseClicked="#goRemoveDish" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -110,7 +120,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -122,7 +132,7 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Circle layoutX="139.0" layoutY="250.0" onMouseClicked="#goAddDP" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="139.0" layoutY="250.0" onMouseClicked="#goRemoveDP" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -131,7 +141,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -143,7 +153,7 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Circle layoutX="135.0" layoutY="411.0" onMouseClicked="#goAddDelivery" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="135.0" layoutY="411.0" onMouseClicked="#goRemoveDelivery" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -152,7 +162,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -164,7 +174,7 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Circle layoutX="481.0" layoutY="250.0" onMouseClicked="#goAddOrder" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="481.0" layoutY="250.0" onMouseClicked="#goRemoveOrder" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -173,7 +183,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -185,7 +195,7 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Circle layoutX="307.0" layoutY="411.0" onMouseClicked="#goAddDA" radius="75.0" stroke="BLACK" strokeType="INSIDE">
+      <Circle layoutX="307.0" layoutY="411.0" onMouseClicked="#goRemoveDA" radius="75.0" stroke="BLACK" strokeType="INSIDE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -194,7 +204,7 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.0941176488995552" blue="0.929411768913269" opacity="0.7699999809265137" />
+                        <Color red="0.9200000166893005" opacity="0.7699999809265137" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -206,7 +216,12 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Label layoutX="92.0" layoutY="276.0" prefHeight="40.0" prefWidth="103.0" text="Add Delivery&#10;    Person" textFill="WHITE">
+      <ImageView layoutX="94.0" layoutY="187.0">
+         <image>
+            <Image url="@../../../../../AppData/Local/Temp/icons8_supplier_100px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="76.0" layoutY="272.0" prefHeight="40.0" prefWidth="131.0" text="Remove Delivery&#10;         Person" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -216,7 +231,7 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_dinner_128px.png" />
          </image>
       </ImageView>
-      <Label layoutX="270.0" layoutY="278.0" prefHeight="28.0" prefWidth="73.0" text="Add Dish" textFill="WHITE">
+      <Label layoutX="259.0" layoutY="278.0" prefHeight="28.0" prefWidth="100.0" text="Remove Dish" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -226,7 +241,7 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_purchase_order_96px.png" />
          </image>
       </ImageView>
-      <Label layoutX="443.0" layoutY="278.0" prefHeight="28.0" prefWidth="81.0" text="Add Order" textFill="WHITE">
+      <Label layoutX="428.0" layoutY="278.0" prefHeight="28.0" prefWidth="113.0" text="Remove Order" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -236,7 +251,7 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_deliver_food_128px.png" />
          </image>
       </ImageView>
-      <Label layoutX="88.0" layoutY="438.0" prefHeight="28.0" prefWidth="103.0" text="Add Delivery" textFill="WHITE">
+      <Label layoutX="77.0" layoutY="435.0" prefHeight="40.0" prefWidth="124.0" text="        Remove&#10;        Delivery" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -246,20 +261,10 @@
             <Image url="@../../../../../AppData/Local/Temp/icons8_location_80px.png" />
          </image>
       </ImageView>
-      <Label layoutX="259.0" layoutY="438.0" prefHeight="40.0" prefWidth="103.0" text="Add Delivery&#10;       Area" textFill="WHITE">
+      <Label layoutX="246.0" layoutY="435.0" prefHeight="40.0" prefWidth="124.0" text="Remove Delivery&#10;          Area" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="106.0" layoutY="56.0">
-         <image>
-            <Image url="@../../../../../AppData/Local/Temp/icons8_chef_hat_40px_1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="78.0" fitWidth="81.0" layoutX="98.0" layoutY="197.0">
-         <image>
-            <Image url="@../../../../../Downloads/SeekPng.com_delivery-png_1145491.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

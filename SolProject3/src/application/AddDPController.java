@@ -10,9 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class AddDPController {
 
@@ -29,13 +31,13 @@ public class AddDPController {
     private DatePicker date;
 
     @FXML
-    private ChoiceBox<Gender> gender;
+    private ComboBox<Gender> gender;
 
     @FXML
-    private ChoiceBox<Vehicle> vehicle;
+    private ComboBox<Vehicle> vehicle;
 
     @FXML
-    private ChoiceBox<DeliveryArea> da;
+    private ComboBox<DeliveryArea> da;
 
     @FXML
     private Label message;
@@ -50,6 +52,7 @@ public class AddDPController {
 		
 		if (txtFName.getText() == null || txtFName.getText().isEmpty() || txtLName.getText() == null || txtLName.getText().isEmpty() ||
 				gend == null || car == null || d == null || bday == null) {
+			message.setTextFill(Color.RED);
 			message.setText("you have fields that are empty");
 		} else {
 			DeliveryPerson dp = new DeliveryPerson(txtFName.getText(), txtLName.getText(), bday, gend, car, d);

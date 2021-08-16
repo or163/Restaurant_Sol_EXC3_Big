@@ -13,6 +13,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public class LoginController {
 	
@@ -33,6 +35,12 @@ public class LoginController {
 	
 	@FXML
 	private Button signIn;
+	
+	@FXML
+    private Line userLine;
+
+    @FXML
+    private Line passwLine;
 
 	@FXML
 	void login(ActionEvent event) {
@@ -59,6 +67,7 @@ public class LoginController {
 					e.printStackTrace();
 				}
 			} else {
+				passwLine.setStroke(Color.RED);
 				message.setText("Incorrect Password");
 			}
 		} else {
@@ -81,10 +90,13 @@ public class LoginController {
 							ex.printStackTrace();
 						}
 					} else {
+						passwLine.setStroke(Color.RED);
+						userLine.setStroke(Color.LIGHTBLUE);
 						message.setText("Incorrect Password");
 					}
 				}
 				if (!c.getUserName().equals(un) && !un.equals("manager")) {
+					userLine.setStroke(Color.RED);
 					message.setText("User does not exist"); // no exist user
 				}
 			}

@@ -333,6 +333,16 @@ public class ManagerController {
 	}
 
 	@FXML
+	void goRemove (ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Remove.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		RemoveController ctrl = (RemoveController) fx.getController();
+		ctrl.setPannelRoot(pannelRoot);
+		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
 	void goOut(ActionEvent event) throws IOException {
 		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
 		Pane p = fx.load();

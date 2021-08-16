@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import Model.Cook;
-import Model.Customer;
-import Model.Dish;
 import Utils.Expertise;
 import Utils.Gender;
 import javafx.beans.property.SimpleStringProperty;

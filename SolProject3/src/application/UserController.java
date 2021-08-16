@@ -12,9 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class UserController {
 
@@ -23,9 +25,25 @@ public class UserController {
 
 	@FXML
 	private Label welcome;
+	
+	@FXML
+	private VBox vbox;
+	
+	@FXML
+	private AnchorPane anchor;
+	
+	private static int counter = 0;
 
 	public void initData(Customer c) {
 		welcome.setText("Welcome " + c.getFirstName());
+	}
+	
+	@FXML
+	void goHome(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/User.fxml"));
+		Parent p = fx.load();
+		Scene s = new Scene(p, 700, 500);
+		Main.stage.setScene(s);
 	}
 	
 	@FXML
@@ -35,6 +53,16 @@ public class UserController {
 		Scene s = new Scene(p, 700, 500);
 		Main.stage.setScene(s);
     }
+	
+	@FXML
+	void goMakeOrder(ActionEvent event) throws IOException {
+		FXMLLoader fx = new FXMLLoader(getClass().getResource("/View/MakeOrder.fxml"));
+		Pane p = fx.load();
+		AnchorPane pp = (AnchorPane) p;
+		MakeOrderController ctrl = (MakeOrderController) fx.getController();
+		ctrl.initData();
+		pannelRoot.setCenter(pp);
+	}
 	
 	@FXML
 	private void goEdit(ActionEvent event) throws IOException {
@@ -74,6 +102,19 @@ public class UserController {
 		GetPopularComponentsController ctrl = (GetPopularComponentsController) fx.getController();
 		ctrl.initData();
 		pannelRoot.setCenter(pp);
+	}
+	
+	@FXML
+	void showMenu(MouseEvent event) {
+		if(UserController.counter % 2 == 0) {
+			vbox.setVisible(false);
+			anchor.setStyle("-fx-background-color: transparent");
+		}
+		else {
+			vbox.setVisible(true);
+			anchor.setStyle("-fx-background-color: #171717");
+			}
+		UserController.counter++;
 	}
 	
 	@FXML

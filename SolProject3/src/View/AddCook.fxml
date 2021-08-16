@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="addcook" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCookController">
    <children>
-      <Label alignment="TOP_CENTER" layoutX="96.0" layoutY="14.0" prefHeight="17.0" prefWidth="385.0" text="add cook">
+      <Label alignment="TOP_CENTER" layoutX="107.0" layoutY="14.0" prefHeight="17.0" prefWidth="385.0" text="add cook">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button alignment="TOP_CENTER" layoutX="394.0" layoutY="352.0" mnemonicParsing="false" onAction="#save" prefHeight="29.0" prefWidth="101.0" text="save">
+      <Button alignment="TOP_CENTER" layoutX="250.0" layoutY="421.0" mnemonicParsing="false" onAction="#save" prefHeight="29.0" prefWidth="100.0" text="save">
          <font>
             <Font size="14.0" />
          </font>
@@ -38,6 +38,6 @@
             <ToggleGroup fx:id="chefTG" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="isChefNo" layoutX="162.0" layoutY="263.0" mnemonicParsing="false" text="No" toggleGroup="$chefTG" />
-      <Label fx:id="message" layoutX="34.0" layoutY="329.0" prefHeight="29.0" prefWidth="266.0" textFill="#d22828" />
+      <Label fx:id="message" alignment="TOP_CENTER" layoutX="167.0" layoutY="456.0" prefHeight="29.0" prefWidth="266.0" textFill="#d22828" />
    </children>
 </AnchorPane>

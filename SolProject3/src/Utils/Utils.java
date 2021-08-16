@@ -3,9 +3,14 @@ package Utils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 import java.util.TimeZone;
 
+import Model.Component;
 import Model.Customer;
 import application.Main;
 import javafx.scene.control.DateCell;
@@ -77,5 +82,13 @@ public class Utils {
     			return true;
     	}
     	return false;		
+    }
+    
+    public static String getProperComponents(List<Component> comps) {
+    	Iterator<Component> iterator = comps.iterator();
+    	String s = "";
+    	while(iterator.hasNext())
+    		s += iterator.next().getComponentName() + ". ";
+    	return s;
     }
 }
